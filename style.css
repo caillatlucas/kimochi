@@ -69,12 +69,18 @@ body.light-mode .nav-logo-icon {
   filter: invert(1) sepia(1) saturate(5) hue-rotate(320deg);
   /* Résultat : rouge #b60000 environ sur fond sombre */
 }
+body.light-mode .hero-logo-img {
+  filter: sepia(1) saturate(5) hue-rotate(320deg);
+}
 
 .about-logo-img {
   width: 75%;
   height: 75%;
   object-fit: contain;
   filter: invert(1) sepia(1) saturate(4) hue-rotate(320deg);
+}
+body.light-mode .about-logo-img {
+  filter: sepia(1) saturate(4) hue-rotate(320deg);
 }
 
 .footer-logo-icon {
@@ -379,6 +385,7 @@ body.light-mode .nm-link:hover { color: var(--dark); }
 /* Étiquette de section */
 .tag {
   display: inline-block;
+  width: fit-content;
   padding: 0.28rem 0.85rem;
   border: 1px solid rgba(182, 0, 0, 0.35);
   border-radius: 99px;
@@ -700,9 +707,7 @@ body.light-mode .car-dots { background: rgba(255, 230, 230, 0.95); }
 }
 
 @media (max-width: 700px) {
-  .slide { grid-template-columns: 1fr; min-height: auto; }
-  .slide-img { min-height: 220px; }
-  .slide-info { padding: 1.75rem; }
+  .slide { height: 350px; }
 }
 
 

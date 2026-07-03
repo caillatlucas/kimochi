@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="KIMOCHI — Impression 3D de précision. Créations personnalisées, prototypes et réalisations sur-mesure." />
+  <title>KIMOCHI — Impression 3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR — Barre de navigation supérieure
+  ═══════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" id="nav-logo-link">
+        <img src="/KIMOCHI.svg" alt="KIMOCHI" class="nav-logo-icon" />
+        <span class="nav-logo-text">KIMOCHI</span>
+      </a>
+
+      <!-- Liens desktop (sans doublon Contact) -->
+      <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
+        <a href="#about" class="nav-link" id="nl-about">À propos</a>
+        <a href="#gallery" class="nav-link" id="nl-gallery">Galerie</a>
+        <a href="#reviews" class="nav-link" id="nl-reviews">Avis</a>
+      </nav>
+
+      <!-- CTA mailto desktop -->
+      <a href="mailto:kimochiprintables@gmail.com" class="nav-cta" id="nav-cta-btn"
+        aria-label="Envoyer un email à KIMOCHI">
+        Contacter
+      </a>
+
+      <!-- Burger mobile -->
+      <button class="nav-burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false"
+        aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Menu mobile déroulant -->
+    <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+      <a href="#about" class="nm-link" id="nm-about">À propos</a>
+      <a href="#gallery" class="nm-link" id="nm-gallery">Galerie</a>
+      <a href="#reviews" class="nm-link" id="nm-reviews">Avis</a>
+      <!-- Séparateur -->
+      <a href="mailto:kimochiprintables@gmail.com" class="nm-cta" id="nm-cta">
+        ✉ Contacter KIMOCHI
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="Accueil">
+      <div class="hero-inner">
+
+        <!-- Logo KIMOCHI -->
+        <div class="hero-icon" aria-hidden="true">
+          <img src="/KIMOCHI.svg" alt="" class="hero-logo-img" />
+        </div>
+
+        <!-- Titre principal -->
+        <h1 class="hero-title" id="hero-title">KIMOCHI</h1>
+        <p class="hero-tagline">Impression 3D de précision</p>
+
+        <!-- Séparateur -->
+        <div class="hero-sep" aria-hidden="true"></div>
+
+        <!-- Scroll indicator -->
+        <button class="hero-scroll-btn" id="hero-scroll-btn" aria-label="Découvrir">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <polyline points="19 12 12 19 5 12" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         À PROPOS
+    ═══════════════════════════════════════ -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Texte -->
+          <div class="about-text reveal">
+            <span class="tag">À propos</span>
+            <h2>L'impression 3D<br /><em>réinventée</em></h2>
+            <p>KIMOCHI transforme vos idées en objets avec une précision sans compromis. Chaque pièce est
+              conçue avec soin, des matériaux premium et une attention aux détails qui fait la différence.</p>
+            <div class="stats-row">
+              <div class="stat-item">
+                <span class="stat-num">20+</span>
+                <span class="stat-lbl">Projets réalisés</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">4.9★</span>
+                <span class="stat-lbl">Note moyenne</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">48h</span>
+                <span class="stat-lbl">Réponse rapide</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visuel logo -->
+          <div class="about-visual reveal" style="--d:120ms">
+            <div class="logo-showcase" aria-label="Logo KIMOCHI">
+              <img src="/KIMOCHI.svg" alt="Logo KIMOCHI" class="about-logo-img" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CONTACT / CTA
+    ═══════════════════════════════════════ -->
+    <section class="section cta-section" id="contact">
+      <div class="container">
+        <div class="cta-block reveal">
+          <span class="tag">Commencer</span>
+          <h2>Un projet en tête ?</h2>
+          <p>Décrivez votre idée, envoyez vos fichiers ou demandez un renseignement.<br />Nous répondons rapidement.</p>
+
+          <!-- Bouton mailto -->
+          <a href="mailto:kimochiprintables@gmail.com" class="btn-main" id="main-contact-btn"
+            aria-label="Contacter KIMOCHI par email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            Contacter KIMOCHI
+          </a>
+
+          <span class="cta-email">kimochiprintables@gmail.com</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         GALERIE — CARROUSEL
+    ═══════════════════════════════════════ -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="tag">Portfolio</span>
+          <h2>Nos réalisations</h2>
+          <p>Quelques-unes de nos créations en impression 3D.</p>
+        </div>
+
+        <div class="carousel-wrap" id="carousel-wrap">
+          <div class="carousel-track" id="carousel-track" role="list">
+
+            <article class="slide" role="listitem">
+              <img src="/print1.jpg" alt="Réalisation 3D n°1" loading="lazy" />
+              <span class="slide-num">01 / 06</span>
+            </article>
+
+            <article class="slide" role="listitem">
+              <img src="/print2.jpg" alt="Réalisation 3D n°2" loading="lazy" />
+              <span class="slide-num">02 / 06</span>
+            </article>
+
+            <article class="slide" role="listitem">
+              <img src="/print3.jpg" alt="Réalisation 3D n°3" loading="lazy" />
+              <span class="slide-num">03 / 06</span>
+            </article>
+
+            <article class="slide" role="listitem">
+              <img src="/print4.jpg" alt="Réalisation 3D n°4" loading="lazy" />
+              <span class="slide-num">04 / 06</span>
+            </article>
+
+            <article class="slide" role="listitem">
+              <img src="/print5.jpg" alt="Réalisation 3D n°5" loading="lazy" />
+              <span class="slide-num">05 / 06</span>
+            </article>
+
+            <article class="slide" role="listitem">
+              <img src="/print6.jpg" alt="Réalisation 3D n°6" loading="lazy" />
+              <span class="slide-num">06 / 06</span>
+            </article>
+
+          </div><!-- /.carousel-track -->
+
+          <!-- Contrôles -->
+          <button class="car-btn car-prev" id="car-prev" aria-label="Image précédente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button class="car-btn car-next" id="car-next" aria-label="Image suivante">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+          <div class="car-dots" id="car-dots" role="tablist" aria-label="Navigation carrousel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         AVIS CLIENTS
+    ═══════════════════════════════════════ -->
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="tag">Témoignages</span>
+          <h2>Ce qu'ils disent</h2>
+        </div>
+
+        <div class="reviews-grid">
+
+          <article class="review-card reveal" style="--d:0ms">
+            <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote>"Qualité impeccable, délai respecté et communication au top. Ma figurine de collection est
+              exactement ce que j'imaginais. Je recommande KIMOCHI les yeux fermés !"</blockquote>
+            <div class="reviewer">
+              <div class="avatar" aria-hidden="true">A</div>
+              <div>
+                <strong>Alexis M.</strong>
+                <span>Figurine personnalisée</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card reveal" style="--d:80ms">
+            <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote>"J'avais besoin d'un prototype pour mon startup. KIMOCHI a livré quelque chose bien plus propre
+              que prévu. Leur précision est bluffante."</blockquote>
+            <div class="reviewer">
+              <div class="avatar" aria-hidden="true">S</div>
+              <div>
+                <strong>Sofia L.</strong>
+                <span>Prototype industriel</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card reveal" style="--d:160ms">
+            <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote>"Commande reçue en 48h, emballage soigné et pièce parfaite. Le rapport qualité-prix est
+              imbattable. Ce sera mon imprimeur 3D de référence !"</blockquote>
+            <div class="reviewer">
+              <div class="avatar" aria-hidden="true">T</div>
+              <div>
+                <strong>Thomas R.</strong>
+                <span>Pièce décorative</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card reveal" style="--d:240ms">
+            <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+            <blockquote>"J'avais juste une photo de référence et ils ont reproduit l'objet à la perfection. Vraiment
+              impressionnant, je commande déjà la suite !"</blockquote>
+            <div class="reviewer">
+              <div class="avatar" aria-hidden="true">M</div>
+              <div>
+                <strong>Manon D.</strong>
+                <span>Reproduction sur photo</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-inner">
+
+        <!-- Marque -->
+        <div class="footer-brand">
+          <img src="/KIMOCHI.svg" alt="KIMOCHI" class="footer-logo-icon" />
+          <div>
+            <p class="footer-name">KIMOCHI</p>
+            <p class="footer-sub">L'impression 3D réinventée.</p>
+          </div>
+        </div>
+
+        <!-- Boutons carrés 1:1 (Email + Instagram) -->
+        <div class="footer-socials" id="footer-socials">
+
+          <!-- Email — ratio 1:1 strict -->
+          <a href="mailto:kimochiprintables@gmail.com" class="sq-btn" id="footer-email-btn"
+            aria-label="Email : kimochiprintables@gmail.com" title="kimochiprintables@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </a>
+
+          <!-- Instagram — ratio 1:1 strict -->
+          <a href="https://www.instagram.com/kimochiprintables" target="_blank" rel="noopener noreferrer" class="sq-btn"
+            id="footer-insta-btn" aria-label="Instagram : @kimochiprintables" title="@kimochiprintables">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-linecap="round" stroke-width="2.8" />
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Bas de page -->
+      <div class="footer-bottom">
+        <p>© 2026 KIMOCHI. Tous droits réservés.</p>
+        <p>KIMOCHI Website · Made by <a href="https://www.instagram.com/lc.20ytb" target="_blank"
+            rel="noopener noreferrer">lc.20ytb</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/script.js"></script>
+</body>
+
+</html>

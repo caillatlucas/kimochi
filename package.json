@@ -1,0 +1,23 @@
+{
+  "name": "kimochi-3d-print",
+  "version": "1.0.0",
+  "description": "Site web KIMOCHI — Impression 3D de précision",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview --open",
+    "lint": "echo 'No linter configured yet'"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "keywords": [
+    "kimochi",
+    "impression-3d",
+    "3d-printing"
+  ],
+  "author": "KIMOCHI",
+  "license": "UNLICENSED"
+}

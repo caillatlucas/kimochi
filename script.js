@@ -112,9 +112,8 @@ window.closeNav = closeNav;
   function update() {
     const scrollY = window.scrollY;
     const heroH   = window.innerHeight;
-    const totalH  = document.body.scrollHeight;
-    const start   = heroH * 0.5;
-    const end     = totalH - heroH;
+    const start   = heroH * 0.25;
+    const end     = heroH * 0.85;
     const p       = clamp((scrollY - start) / (end - start), 0, 1);
 
     if (Math.abs(p - lastP) < 0.002) return;

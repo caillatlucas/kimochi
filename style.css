@@ -843,16 +843,6 @@ body.light-mode .reviewer span { color: rgba(23, 0, 0, 0.45); }
   background-color: var(--red);
   -webkit-mask: url('./TITLE.svg') no-repeat center / contain;
   mask: url('./TITLE.svg') no-repeat center / contain;
-  transform: translateY(-3px);
-}
-
-.footer-sub {
-  font-size: clamp(0.8rem, 1.8vw, 1.2rem);
-  font-weight: bold;
-  color: #ffffff;
-  letter-spacing: 1.2em;
-  margin-top: 0.2rem;
-  margin-right: -1.2em;
 }
 
 /* ─── BOUTONS CARRÉS SOCIAUX (ratio 1:1 strict) ── */

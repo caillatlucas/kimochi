@@ -48,49 +48,36 @@ img { display: block; max-width: 100%; height: auto; }
 .container { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
 
 /* ─── Logo KIMOCHI.svg ────────────────────────
-   Le SVG contient une image sombre → on l'inverse
-   sur fond sombre pour la rendre visible
+   Le SVG est affiché via un filtre SVG pour
+   pouvoir lui appliquer la couleur --red
 ─────────────────────────────────────────────── */
 .nav-logo-icon {
   width: 36px;
   height: 36px;
   object-fit: contain;
-  filter: invert(1);          /* Blanc sur fond sombre */
-  transition: filter 0.4s;
-}
-body.light-mode .nav-logo-icon {
-  filter: none;               /* Sombre sur fond clair */
+  filter: url('#red-filter');
 }
 
 .hero-logo-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: invert(1);
-}
-body.light-mode .hero-logo-img {
-  filter: none;
+  filter: url('#red-filter');
 }
 
 .about-logo-img {
   width: 75%;
   height: 75%;
   object-fit: contain;
-  filter: invert(1);
-}
-body.light-mode .about-logo-img {
-  filter: none;
+  filter: url('#red-filter');
 }
 
 .footer-logo-icon {
   width: 50px;
   height: 50px;
-  object-fit: contain;
-  filter: invert(1);
   flex-shrink: 0;
-}
-body.light-mode .footer-logo-icon {
-  filter: none;
+  object-fit: contain;
+  filter: url('#red-filter');
 }
 
 
@@ -142,21 +129,17 @@ body.light-mode .nav-logo { color: var(--dark); }
 .nav-logo-icon {
   width: 32px;
   height: 32px;
-  color: var(--red);
 }
 
 .nav-title-img {
   display: inline-block;
   height: 24px;
   width: 123px;
-  background-color: var(--white);
+  background-color: var(--red);
   -webkit-mask: url('./TITLE.svg') no-repeat center / contain;
   mask: url('./TITLE.svg') no-repeat center / contain;
   margin-left: 0.2rem;
   transform: translateY(-3px);
-}
-body.light-mode .nav-title-img {
-  background-color: var(--dark);
 }
 
 /* Liens de navigation */

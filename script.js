@@ -164,6 +164,8 @@ window.closeNav = closeNav;
   const total  = slides.length;
   let current  = 0;
   let timer;
+  let isHovered = false;
+  let interactionPauseUntil = 0;
 
   /* Création des dots */
   slides.forEach((_, i) => {
@@ -171,30 +173,41 @@ window.closeNav = closeNav;
     d.className = `dot${i === 0 ? ' active' : ''}`;
     d.setAttribute('role', 'tab');
     d.setAttribute('aria-label', `Photo ${i + 1}`);
-    d.addEventListener('click', () => goTo(i));
+    d.addEventListener('click', () => interact(i));
     dotsWrap.appendChild(d);
   });
   const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
 
-  function goTo(idx) {
-    current = ((idx % total) + total) % total;
+  function updateDOM() {
     track.style.transform = `translateX(-${current * 100}%)`;
     dots.forEach((d, i) => {
       d.classList.toggle('active', i === current);
       d.setAttribute('aria-selected', i === current ? 'true' : 'false');
     });
-    resetTimer();
   }
 
-  prevBtn?.addEventListener('click', () => goTo(current - 1));
-  nextBtn?.addEventListener('click', () => goTo(current + 1));
+  function interact(idx) {
+    current = ((idx % total) + total) % total;
+    updateDOM();
+    interactionPauseUntil = Date.now() + 10000;
+    start();
+  }
+
+  function autoplayNext() {
+    current = (current + 1) % total;
+    updateDOM();
+    start();
+  }
+
+  prevBtn?.addEventListener('click', () => interact(current - 1));
+  nextBtn?.addEventListener('click', () => interact(current + 1));
 
   /* Clavier */
   document.addEventListener('keydown', (e) => {
     const r = wrap.getBoundingClientRect();
     if (r.top > window.innerHeight || r.bottom < 0) return;
-    if (e.key === 'ArrowLeft')  { goTo(current - 1); e.preventDefault(); }
-    if (e.key === 'ArrowRight') { goTo(current + 1); e.preventDefault(); }
+    if (e.key === 'ArrowLeft')  { interact(current - 1); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { interact(current + 1); e.preventDefault(); }
   });
 
   /* Swipe tactile */
@@ -211,21 +224,26 @@ window.closeNav = closeNav;
   wrap.addEventListener('touchend', e => {
     if (!drag) return;
     const d = e.changedTouches[0].clientX - tx;
-    if (d < -45) goTo(current + 1);
-    else if (d > 45) goTo(current - 1);
+    if (d < -45) interact(current + 1);
+    else if (d > 45) interact(current - 1);
     drag = false;
   });
 
   /* Autoplay */
-  function start()  { timer = setInterval(() => goTo(current + 1), 5000); }
-  function stop()   { clearInterval(timer); }
-  function resetTimer() { stop(); start(); }
+  function start() { 
+    stop();
+    if (isHovered || document.hidden) return;
+    const now = Date.now();
+    const delay = now < interactionPauseUntil ? interactionPauseUntil - now : 5000;
+    timer = setTimeout(autoplayNext, delay); 
+  }
+  function stop() { clearTimeout(timer); }
 
-  wrap.addEventListener('mouseenter', stop);
-  wrap.addEventListener('mouseleave', start);
+  wrap.addEventListener('mouseenter', () => { isHovered = true; stop(); });
+  wrap.addEventListener('mouseleave', () => { isHovered = false; start(); });
   document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
 
-  goTo(0);
+  updateDOM();
   start();
 })();
 

@@ -145,11 +145,17 @@ body.light-mode .nav-logo { color: var(--dark); }
   color: var(--red);
 }
 
-.nav-logo-text {
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.nav-title-img {
+  display: inline-block;
+  height: 24px;
+  width: 123px;
+  background-color: var(--white);
+  -webkit-mask: url('./TITLE.svg') no-repeat center / contain;
+  mask: url('./TITLE.svg') no-repeat center / contain;
+  margin-left: 0.2rem;
+}
+body.light-mode .nav-title-img {
+  background-color: var(--dark);
 }
 
 /* Liens de navigation */
@@ -319,14 +325,20 @@ body.light-mode .nm-link:hover { color: var(--dark); }
 
 /* Titre géant */
 .hero-title {
-  font-size: clamp(4rem, 12vw, 10rem);
-  font-weight: 900;
-  letter-spacing: 0.02em;       /* Réduit pour éviter l'étirement */
-  color: var(--red);
-  line-height: 1;
-  text-transform: uppercase;
-  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   animation: fade-up 0.9s var(--ease) 0.2s both;
+}
+
+.hero-title-img {
+  display: inline-block;
+  width: clamp(320px, 80vw, 1050px);
+  aspect-ratio: 1711 / 333;
+  background-color: var(--red);
+  -webkit-mask: url('./TITLE.svg') no-repeat center / contain;
+  mask: url('./TITLE.svg') no-repeat center / contain;
 }
 
 .hero-tagline {
@@ -829,12 +841,13 @@ body.light-mode .reviewer span { color: rgba(23, 0, 0, 0.45); }
   flex-shrink: 0;
 }
 
-.footer-name {
-  font-size: 1.3rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--red);
+.footer-title-img {
+  display: inline-block;
+  height: 28px;
+  width: 144px;
+  background-color: var(--red);
+  -webkit-mask: url('./TITLE.svg') no-repeat center / contain;
+  mask: url('./TITLE.svg') no-repeat center / contain;
 }
 
 .footer-sub {

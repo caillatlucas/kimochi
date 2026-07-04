@@ -335,17 +335,18 @@ body.light-mode .nm-link:hover { color: var(--dark); }
 }
 
 .hero-tagline {
-  font-size: clamp(0.8rem, 1.8vw, 1rem);
-  font-weight: 300;
-  letter-spacing: 0.25em;
+  font-size: clamp(1rem, 2.8vw, 2.2rem);
+  font-weight: bold;
+  letter-spacing: 1.2em;
   text-transform: uppercase;
-  color: rgba(255, 217, 217, 0.45);
+  color: #ffffff;
   animation: fade-up 0.9s var(--ease) 0.4s both;
+  margin-right: -1.2em;
 }
 
 /* Ligne rouge séparatrice */
 .hero-sep {
-  width: 60px;
+  width: clamp(150px, 45vw, 650px);
   height: 1px;
   background: var(--red);
   opacity: 0.5;
@@ -846,11 +847,12 @@ body.light-mode .reviewer span { color: rgba(23, 0, 0, 0.45); }
 }
 
 .footer-sub {
-  font-size: 0.75rem;
-  font-weight: 300;
-  color: rgba(255, 217, 217, 0.4);
-  letter-spacing: 0.06em;
+  font-size: clamp(0.8rem, 1.8vw, 1.2rem);
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 1.2em;
   margin-top: 0.2rem;
+  margin-right: -1.2em;
 }
 
 /* ─── BOUTONS CARRÉS SOCIAUX (ratio 1:1 strict) ── */
@@ -933,7 +935,7 @@ body.light-mode .footer-bottom a:hover {
 body.light-mode .section-head p { color: rgba(23, 0, 0, 0.5); }
 body.light-mode .review-card blockquote { color: rgba(23, 0, 0, 0.7); }
 body.light-mode .footer { background: rgba(255, 200, 200, 0.4); border-top-color: rgba(182, 0, 0, 0.25); }
-body.light-mode .footer-sub { color: rgba(23, 0, 0, 0.45); }
+body.light-mode .footer-sub { color: #000000; }
 body.light-mode .footer-bottom p { color: rgba(23, 0, 0, 0.35); }
 body.light-mode .sq-btn { border-color: rgba(182, 0, 0, 0.4); color: rgba(23, 0, 0, 0.6); background: rgba(182, 0, 0, 0.07); }
 body.light-mode .car-btn { background: rgba(255, 200, 200, 0.85); color: var(--dark); }

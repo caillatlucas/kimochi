@@ -1,8 +1,11 @@
 <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
 	<defs>
 		<image  width="152" height="152" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJgAAACYBAMAAADq7D0SAAAAAXNSR0IB2cksfwAAAC1QTFRFAAAACAAAAAAACQAACAAAEAAACAAACwAAAwAABwAADwAABQAAAgAADAAABgAActEvsAAAAA90Uk5T/8AAAB8AnAAA3AAA/gAAMjcxhAAAALNJREFUeJzt10EKgmAQhuHRSPmJRMIWYpS0bNEZOkqr9l3As3SEjuAR3LXtJGIuhVSGZtEP77sdePi2E4i2TSqSNF9PgRoLS5F9bYidn2BgYGBgYGBgYGBgYH5i0X0UWz20WFxMbAPzDFscDLFBLjfE5AgGBgYGBgYGBgYGBgY2V7T7DTN9Ef/3Ewbrq65azJ3GrOXtosXa98Q2MDAwMDAwMDAwMDAwP7H11hBLss+6lxbrAKe8xZmzXyG8AAAAAElFTkSuQmCC"/>
+		<filter id="red-filter" color-interpolation-filters="sRGB">
+			<feColorMatrix type="matrix" values="0 0 0 0 0.7137 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+		</filter>
 	</defs>
 	<style>
 	</style>
-	<use id="Background" href="#img1" x="52" y="52"/>
+	<use id="Background" href="#img1" x="52" y="52" filter="url(#red-filter)"/>
 </svg>

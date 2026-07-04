@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   // Base URL pour GitHub Pages (chemins relatifs)
-  base: './',
+  base: '/',
   // Dossier racine du projet (là où se trouve index.html)
   root: './',
 

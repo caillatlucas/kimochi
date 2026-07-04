@@ -8,20 +8,7 @@
 'use strict';
 
 /* ─── UTILITAIRES ───────────────────────────── */
-const lerp  = (a, b, t) => a + (b - a) * t;
 const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
-
-function hexToRgb(hex) {
-  return [
-    parseInt(hex.slice(1, 3), 16),
-    parseInt(hex.slice(3, 5), 16),
-    parseInt(hex.slice(5, 7), 16),
-  ];
-}
-function lerpColor(h1, h2, t) {
-  const [r1,g1,b1] = hexToRgb(h1), [r2,g2,b2] = hexToRgb(h2);
-  return `rgb(${Math.round(lerp(r1,r2,t))},${Math.round(lerp(g1,g2,t))},${Math.round(lerp(b1,b2,t))})`;
-}
 
 /* ─── SCROLL VERS SECTION (nom distinct) ────── */
 /* NE PAS nommer "scrollTo" → écraserait window.scrollTo natif */
@@ -117,8 +104,8 @@ window.closeNav = closeNav;
       #170000 → #ffd9d9
 ═══════════════════════════════════════════════ */
 (function initScrollBg() {
-  const DARK  = '#170000';
-  const LIGHT = '#ffd9d9';
+  const bgLayer = document.getElementById('bg-layer');
+  if (!bgLayer) return;
   let ticking = false;
   let lastP   = -1;
 
@@ -133,7 +120,7 @@ window.closeNav = closeNav;
     if (Math.abs(p - lastP) < 0.002) return;
     lastP = p;
 
-    document.body.style.background = lerpColor(DARK, LIGHT, p);
+    bgLayer.style.opacity = p;
     document.body.classList.toggle('light-mode', p > 0.42);
   }
 
@@ -202,10 +189,16 @@ window.closeNav = closeNav;
   prevBtn?.addEventListener('click', () => interact(current - 1));
   nextBtn?.addEventListener('click', () => interact(current + 1));
 
-  /* Clavier */
+  /* Clavier - activé uniquement quand visible (évite Reflows) */
+  let isVisible = false;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(e => isVisible = e[0].isIntersecting).observe(wrap);
+  } else {
+    isVisible = true;
+  }
+
   document.addEventListener('keydown', (e) => {
-    const r = wrap.getBoundingClientRect();
-    if (r.top > window.innerHeight || r.bottom < 0) return;
+    if (!isVisible) return;
     if (e.key === 'ArrowLeft')  { interact(current - 1); e.preventDefault(); }
     if (e.key === 'ArrowRight') { interact(current + 1); e.preventDefault(); }
   });

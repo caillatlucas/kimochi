@@ -14,12 +14,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
+  <link rel="preload" as="image" href="/TITLE.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <div class="bg-layer" aria-hidden="true" id="bg-layer"></div>
   <!-- Filtre SVG pour coloriser les logos en rouge (#b60000) -->
-  <svg width="0" height="0" style="position: absolute;">
+  <svg width="0" height="0" style="position: absolute; display: none;" aria-hidden="true">
     <filter id="red-filter" color-interpolation-filters="sRGB">
       <feColorMatrix type="matrix" values="
         0 0 0 0 0.7137
@@ -37,7 +39,7 @@
 
       <!-- Logo -->
       <a href="#hero" class="nav-logo" id="nav-logo-link">
-        <img src="./KIMOCHI.svg" alt="KIMOCHI" class="nav-logo-icon" />
+        <img src="./KIMOCHI.svg" alt="KIMOCHI" class="nav-logo-icon svg-red-filter" width="32" height="32" decoding="async" />
         <div class="nav-title-img" aria-label="KIMOCHI"></div>
       </a>
 
@@ -82,7 +84,7 @@
       <div class="hero-inner">
 
         <div class="hero-icon" aria-hidden="true">
-          <img src="./KIMOCHI.svg" alt="" class="hero-logo-img" />
+          <img src="./KIMOCHI.svg" alt="" class="hero-logo-img svg-red-filter" width="100" height="100" decoding="async" />
         </div>
 
         <!-- Titre principal -->
@@ -136,7 +138,7 @@
           <!-- Visuel logo -->
           <div class="about-visual reveal" style="--d:120ms">
             <div class="logo-showcase" aria-label="Logo KIMOCHI">
-              <img src="./KIMOCHI.svg" alt="Logo KIMOCHI" class="about-logo-img" />
+              <img src="./KIMOCHI.svg" alt="Logo KIMOCHI" class="about-logo-img svg-red-filter" width="210" height="210" decoding="async" />
             </div>
           </div>
 
@@ -184,32 +186,32 @@
           <div class="carousel-track" id="carousel-track" role="list">
 
             <article class="slide" role="listitem">
-              <img src="./print1.jpg" alt="Réalisation 3D n°1" loading="lazy" />
+              <img src="./print1.jpg" alt="Réalisation 3D n°1" loading="lazy" decoding="async" />
               <span class="slide-num">01 / 06</span>
             </article>
 
             <article class="slide" role="listitem">
-              <img src="./print2.jpg" alt="Réalisation 3D n°2" loading="lazy" />
+              <img src="./print2.jpg" alt="Réalisation 3D n°2" loading="lazy" decoding="async" />
               <span class="slide-num">02 / 06</span>
             </article>
 
             <article class="slide" role="listitem">
-              <img src="./print3.jpg" alt="Réalisation 3D n°3" loading="lazy" />
+              <img src="./print3.jpg" alt="Réalisation 3D n°3" loading="lazy" decoding="async" />
               <span class="slide-num">03 / 06</span>
             </article>
 
             <article class="slide" role="listitem">
-              <img src="./print4.jpg" alt="Réalisation 3D n°4" loading="lazy" />
+              <img src="./print4.jpg" alt="Réalisation 3D n°4" loading="lazy" decoding="async" />
               <span class="slide-num">04 / 06</span>
             </article>
 
             <article class="slide" role="listitem">
-              <img src="./print5.jpg" alt="Réalisation 3D n°5" loading="lazy" />
+              <img src="./print5.jpg" alt="Réalisation 3D n°5" loading="lazy" decoding="async" />
               <span class="slide-num">05 / 06</span>
             </article>
 
             <article class="slide" role="listitem">
-              <img src="./print6.jpg" alt="Réalisation 3D n°6" loading="lazy" />
+              <img src="./print6.jpg" alt="Réalisation 3D n°6" loading="lazy" decoding="async" />
               <span class="slide-num">06 / 06</span>
             </article>
 
@@ -283,7 +285,7 @@
 
         <!-- Marque -->
         <div class="footer-brand">
-          <img src="./KIMOCHI.svg" alt="KIMOCHI" class="footer-logo-icon" />
+          <img src="./KIMOCHI.svg" alt="KIMOCHI" class="footer-logo-icon svg-red-filter" width="50" height="50" decoding="async" />
           <div>
             <div class="footer-title-img" aria-label="KIMOCHI"></div>
             <p class="footer-sub">PRINTABLES</p>
